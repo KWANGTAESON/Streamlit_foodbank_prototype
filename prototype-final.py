@@ -202,14 +202,14 @@ class MyClass:
 
 def grouping_gugun_money_graph20(self, gu):
     top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
-
+    
     # Malgun Gothic 폰트 로드
     font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
     font_prop = fm.FontProperties(fname=font_path)
 
     fig = plt.figure()
     fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
-    sns.barplot(data=top20, x='기부금액', y='기부자명')
+    sns.barplot(data=top20, x='기부금액', y='기부자명', fontproperties=font_prop)
     plt.title('기부금액 별', fontproperties=font_prop)
     plt.xlabel('기부금액', fontproperties=font_prop)
     plt.ylabel('기부자명', fontproperties=font_prop)
