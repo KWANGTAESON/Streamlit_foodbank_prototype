@@ -24,30 +24,7 @@ sns.set(font="Malgun Gothic",
 rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
 style='darkgrid')
 
-# TTF 파일 경로
-font_path = "malgun.ttf"
 
-# CSS 스타일시트에 폰트 로드
-def load_font(font_path):
-    with open(font_path, "rb") as f:
-        font_data = f.read()
-    return font_data
-
-font_data = load_font(font_path)
-st.markdown(
-    f"""
-    <style>
-    @font-face {{
-        font-family: 'CustomFont';
-        src: url(data:font/ttf;base64,{font_data});
-    }}
-    body {{
-        font-family: 'CustomFont', sans-serif;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 class MyClass:
     def __init__(self):
@@ -326,6 +303,32 @@ st.set_page_config(
     page_icon="🖥",
     page_title="기부 관리 시스템",
     layout="wide"
+)
+
+# TTF 파일 경로
+font_path = "malgun.ttf"
+
+# CSS 스타일시트에 폰트 로드
+@st.cache(allow_output_mutation=True)
+def load_font(font_path):
+    with open(font_path, "rb") as f:
+        font_data = f.read()
+    return font_data
+
+font_data = load_font(font_path)
+st.markdown(
+    f"""
+    <style>
+    @font-face {{
+        font-family: 'CustomFont';
+        src: url(data:font/ttf;base64,{font_data});
+    }}
+    body {{
+        font-family: 'CustomFont', sans-serif;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 @st.cache_data
