@@ -15,14 +15,16 @@ from datetime import date
 from streamlit_folium import folium_static
 import re
 import joblib
-
-# 시각화 한글폰트 설정
-plt.rc('font', family='Malgun Gothic')
-sns.set(font="Malgun Gothic",#"NanumGothicCoding", 
-rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
-style='darkgrid')
+from matplotlib import font_manager, rc
+plt.rcParams['axes.unicode_minus'] = False
 if platform.system() == 'Linux':
     rc('font', family='NanumGothic')
+# 시각화 한글폰트 설정
+# plt.rc('font', family='Malgun Gothic')
+# sns.set(font="Malgun Gothic",#"NanumGothicCoding", 
+# rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+# style='darkgrid')
+
 
 
 class MyClass:
