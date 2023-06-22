@@ -6,3 +6,4 @@ folium
 seaborn
 joblib
 openpyxl
+plt.rcParams['font.family'] = 'Malgun Gothic'
