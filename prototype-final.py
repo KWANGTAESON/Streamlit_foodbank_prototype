@@ -18,11 +18,21 @@ import joblib
 import platform
 import matplotlib.font_manager as fm
 
-# 시각화 한글폰트 설정
-plt.rc('font', family='Malgun Gothic')
-sns.set(font="Malgun Gothic", 
-rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
-style='darkgrid')
+# 폰트 경로 설정
+font_path = "malgun.ttf"
+
+# 폰트 설정
+st.markdown(f'<style>body{{font-family: "malgun", sans-serif;}}</style>', unsafe_allow_html=True)
+
+# 폰트 로드
+st.set_option('deprecation.showPyplotGlobalUse', False)
+st.pyplot(lambda: plt.imread(font_path))
+
+# # 시각화 한글폰트 설정
+# plt.rc('font', family='Malgun Gothic')
+# sns.set(font="Malgun Gothic", 
+# rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+# style='darkgrid')
 
 class MyClass:
     def __init__(self):
