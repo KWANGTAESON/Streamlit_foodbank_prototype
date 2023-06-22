@@ -315,20 +315,6 @@ def load_font(font_path):
     return font_data
 
 font_data = load_font(font_path)
-st.markdown(
-    f"""
-    <style>
-    @font-face {{
-        font-family: 'CustomFont';
-        src: url(data:font/ttf;base64,{font_data});
-    }}
-    body {{
-        font-family: 'CustomFont', sans-serif;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 @st.cache_data
 def read_data():
