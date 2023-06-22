@@ -542,7 +542,12 @@ with tab2:
     
     col901, col902 = st.columns(2)
     
-    with col901:    
+    with col901:
+        # 시각화 한글폰트 설정
+        plt.rc('font', family='Malgun Gothic')
+        sns.set(font="Malgun Gothic",#"NanumGothicCoding", 
+        rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+        style='darkgrid')
         p.grouping_gugun_graph20(selected_gu)
         
     with col902:
