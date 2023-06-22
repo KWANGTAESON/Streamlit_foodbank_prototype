@@ -191,7 +191,7 @@ class MyClass:
     
         fig = plt.figure()
         fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
-        sns.barplot(data=top20, x='기부건수', y='기부자명'. , fontproperties=font_prop)
+        sns.barplot(data=top20, x='기부건수', y='기부자명', fontproperties=font_prop)
         plt.title('기부건수 별', fontproperties=font_prop)
         plt.xlabel('기부건수', fontproperties=font_prop)
         plt.ylabel('기부자명', fontproperties=font_prop)
