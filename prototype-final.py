@@ -188,7 +188,7 @@ class MyClass:
         top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
         fig = plt.figure()
         fig.set_dpi(300) # DPI 값을 조정하여 레티나 품질로 설정
-        plt.bar(data=top20, x='기부건수', y='기부자명')
+        plt.bar(top20['기부건수'], top20['기부자명'])
         plt.title('기부건수 별')
         plt.show()
 
