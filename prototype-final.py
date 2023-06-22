@@ -20,7 +20,7 @@ import matplotlib.font_manager as fm
 
 # 시각화 한글폰트 설정
 plt.rc('font', family='Malgun Gothic')
-sns.set(font=font_prop, 
+sns.set(font="Malgun Gothic", 
 rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
 style='darkgrid')
 
