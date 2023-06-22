@@ -15,6 +15,7 @@ from datetime import date
 from streamlit_folium import folium_static
 import re
 import joblib
+import platform
 from matplotlib import font_manager, rc
 plt.rcParams['axes.unicode_minus'] = False
 if platform.system() == 'Linux':
