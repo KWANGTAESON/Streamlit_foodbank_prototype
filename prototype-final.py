@@ -188,8 +188,8 @@ class MyClass:
         # Malgun Gothic 폰트 로드
         font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
         font_prop = fm.FontProperties(fname=font_path)
+        plt.rcParams['font.family'] = font_prop.get_name()
         
-
         fig = plt.figure()
         fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
         sns.barplot(data=top20, x='기부건수', y='기부자명')
@@ -207,11 +207,12 @@ class MyClass:
         # Malgun Gothic 폰트 로드
         font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
         font_prop = fm.FontProperties(fname=font_path)
-    
+        plt.rcParams['font.family'] = font_prop.get_name()
+        
         fig = plt.figure()
         fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
         sns.barplot(data=top20, x='기부금액', y='기부자명')
-        plt.yticks(fontproperties=font_prop)
+        
         plt.title('기부금액 별', fontproperties=font_prop)
         plt.xlabel('기부금액', fontproperties=font_prop)
         plt.ylabel('기부자명', fontproperties=font_prop)
