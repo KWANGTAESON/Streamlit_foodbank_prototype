@@ -16,7 +16,7 @@ from streamlit_folium import folium_static
 import re
 import joblib
 import platform
-from matplotlib import font_manager, rc
+import matplotlib.font_manager as fm 
 
 # 시각화 한글폰트 설정
 plt.rc('font', family='Malgun Gothic')
