@@ -196,6 +196,8 @@ class MyClass:
         plt.title('기부건수 별', fontproperties=font_prop)
         plt.xlabel('기부건수', fontproperties=font_prop)
         plt.ylabel('기부자명', fontproperties=font_prop)
+        plt.xticks(fontproperties=font_prop)
+        plt.yticks(fontproperties=font_prop)
         plt.tight_layout()
     
         return st.pyplot(fig)
@@ -216,6 +218,8 @@ class MyClass:
         plt.title('기부금액 별', fontproperties=font_prop)
         plt.xlabel('기부금액', fontproperties=font_prop)
         plt.ylabel('기부자명', fontproperties=font_prop)
+        plt.xticks(fontproperties=font_prop)
+        plt.yticks(fontproperties=font_prop)
         plt.tight_layout()
 
         return st.pyplot(fig)
