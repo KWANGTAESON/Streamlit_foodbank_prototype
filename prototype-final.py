@@ -24,7 +24,14 @@ sns.set(font="Malgun Gothic",
 rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
 style='darkgrid')
 
+@st.cache_data
+def fontRegistered():
+    font_dirs = [os.getcwd() + '/customFonts']
+    font_files = fm.findSystemFonts(fontpaths=font_dirs)
 
+    for font_file in font_files:
+        fm.fontManager.addfont(font_file)
+    fm._load_fontmanager(try_read_cache=False)
 
 class MyClass:
     def __init__(self):
@@ -313,6 +320,7 @@ def read_data():
 p = read_data()
 
 # 데이터 불러오기
+fontRegistered()
 test = pd.read_csv('기부물품대분류(가짜데이터).csv', encoding='cp949')
 
 # tabs 만들기 
