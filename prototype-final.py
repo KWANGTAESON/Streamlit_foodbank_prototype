@@ -19,12 +19,11 @@ import platform
 from matplotlib import font_manager, rc
 
 # 시각화 한글폰트 설정
-plt.rc('font', family='Malgun Gothic')
-sns.set(font="NanumGothicCoding", 
-rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
-style='darkgrid')
-# if platform.system() == 'Linux':
-#     rc('font', family='NanumGothic')
+# plt.rc('font', family='Malgun Gothic')
+# sns.set(font="Malgun Gothic", 
+# rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+# style='darkgrid')
+plt.rcParams['font.family'] = "Malgun Gothic" 
 
 
 
