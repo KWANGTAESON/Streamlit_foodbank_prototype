@@ -543,12 +543,9 @@ with tab2:
     col901, col902 = st.columns(2)
     
     with col901:
-        # 시각화 한글폰트 설정
-        plt.rcParams['font.family'] = 'Malgun Gothic'
         p.grouping_gugun_graph20(selected_gu)
         
     with col902:
-        plt.rcParams['font.family'] = 'Malgun Gothic'
         p.grouping_gugun_money_graph20(selected_gu)
         
         
