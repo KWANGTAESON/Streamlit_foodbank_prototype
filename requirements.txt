@@ -2,7 +2,6 @@ streamlit
 numpy
 pandas
 streamlit_folium
-urllib.parse
 folium
 seaborn
 matplotlib.pyplot
