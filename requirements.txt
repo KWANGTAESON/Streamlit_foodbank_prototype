@@ -8,4 +8,3 @@ joblib
 openpyxl
 
 sns.set(font="Malgun Gothic")
-plt.rcParams["font.family"] = "Malgun Gothic"
