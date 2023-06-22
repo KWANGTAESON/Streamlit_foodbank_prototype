@@ -16,22 +16,13 @@ from streamlit_folium import folium_static
 import re
 import joblib
 import platform
-import matplotlib.font_manager as fm 
+
 
 # 시각화 한글폰트 설정
-# plt.rc('font', family='Malgun Gothic')
-# sns.set(font="Malgun Gothic", 
-# rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
-# style='darkgrid')
-
-@st.cache_data
-def fontRegistered():
-    font_dirs = [os.getcwd() + '/customFonts']
-    font_files = fm.findSystemFonts(fontpaths=font_dirs)
-
-    for font_file in font_files:
-        fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
+plt.rc('font', family='Malgun Gothic')
+sns.set(font="Malgun Gothic", 
+rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+style='darkgrid')
 
 class MyClass:
     def __init__(self):
@@ -190,32 +181,67 @@ class MyClass:
 
         # 출력 화면에 맵 열기
         return folium_static(map)
+import matplotlib.font_manager as fm
 
-    # 구 별 최다 기부처 그래프 Top20 함수 7
-    def grouping_gugun_graph20(self, gu):
+def grouping_gugun_graph20(gu):
+    top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
+
+    # Malgun Gothic 폰트 로드
+    font_path = 'MalgunGothic.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
+    font_prop = fm.FontProperties(fname=font_path)
+
+    fig = plt.figure()
+    fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
+    sns.barplot(data=top20, x='기부건수', y='기부자명')
+    plt.title('기부건수 별', fontproperties=font_prop)
+    plt.xlabel('기부건수', fontproperties=font_prop)
+    plt.ylabel('기부자명', fontproperties=font_prop)
+    plt.tight_layout()
+
+    return st.pyplot(fig)
 
 
-        top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
-        fig = plt.figure()
-        fig.set_dpi(300) # DPI 값을 조정하여 레티나 품질로 설정
-        sns.barplot(data=top20, x='기부건수', y='기부자명')
-        plt.title('기부건수 별')
-        plt.show()
+def grouping_gugun_money_graph20(gu):
+    top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
 
-        return st.pyplot(fig)
+    # Malgun Gothic 폰트 로드
+    font_path = '/path/to/your/MalgunGothic.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
+    font_prop = fm.FontProperties(fname=font_path)
+
+    fig = plt.figure()
+    fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
+    sns.barplot(data=top20, x='기부금액', y='기부자명')
+    plt.title('기부금액 별', fontproperties=font_prop)
+    plt.xlabel('기부금액', fontproperties=font_prop)
+    plt.ylabel('기부자명', fontproperties=font_prop)
+    plt.tight_layout()
+
+    return st.pyplot(fig)
+    # # 구 별 최다 기부처 그래프 Top20 함수 7
+    # def grouping_gugun_graph20(self, gu):
 
 
-    # 금액 별 그래프 함수 8
-    def grouping_gugun_money_graph20(self, gu):
+    #     top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
+    #     fig = plt.figure()
+    #     fig.set_dpi(300) # DPI 값을 조정하여 레티나 품질로 설정
+    #     sns.barplot(data=top20, x='기부건수', y='기부자명')
+    #     plt.title('기부건수 별')
+    #     plt.show()
 
-        top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
-        fig = plt.figure()
-        fig.set_dpi(300) # DPI 값을 조정하여 레티나 품질로 설정
-        sns.barplot(data=top20, x='기부금액', y='기부자명')
-        plt.title('기부금액 별')
-        plt.show()
+    #     return st.pyplot(fig)
 
-        return st.pyplot(fig)
+
+    # # 금액 별 그래프 함수 8
+    # def grouping_gugun_money_graph20(self, gu):
+
+    #     top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
+    #     fig = plt.figure()
+    #     fig.set_dpi(300) # DPI 값을 조정하여 레티나 품질로 설정
+    #     sns.barplot(data=top20, x='기부금액', y='기부자명')
+    #     plt.title('기부금액 별')
+    #     plt.show()
+
+    #     return st.pyplot(fig)
     
     # 리턴 변수 : X, Y
     def preprocessing(self, data):
@@ -320,7 +346,7 @@ def read_data():
 p = read_data()
 
 # 데이터 불러오기
-fontRegistered()
+
 test = pd.read_csv('기부물품대분류(가짜데이터).csv', encoding='cp949')
 
 # tabs 만들기 
