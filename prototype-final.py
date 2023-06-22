@@ -305,17 +305,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# TTF 파일 경로
-font_path = "malgun.ttf"
-
-# CSS 스타일시트에 폰트 로드
-def load_font(font_path):
-    with open(font_path, "rb") as f:
-        font_data = f.read()
-    return font_data
-
-font_data = load_font(font_path)
-
 @st.cache_data
 def read_data():
     proto = MyClass()
