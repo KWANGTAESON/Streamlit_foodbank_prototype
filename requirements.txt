@@ -4,5 +4,4 @@ pandas
 streamlit_folium
 folium
 seaborn
-re
 joblib
