@@ -6,5 +6,3 @@ folium
 seaborn
 joblib
 openpyxl
-
-sns.set(font="Malgun Gothic")
