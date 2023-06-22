@@ -2,7 +2,6 @@ streamlit
 numpy
 pandas
 streamlit_folium
-os
 urllib.parse
 folium
 seaborn
