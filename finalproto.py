@@ -1,5 +1,5 @@
 # 라이브러리
-!pip install streamlit_folium
+pip install streamlit_folium
 import pandas as pd
 import streamlit as st
 import numpy as np
