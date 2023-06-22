@@ -21,6 +21,8 @@ plt.rc('font', family='Malgun Gothic')
 sns.set(font="Malgun Gothic",#"NanumGothicCoding", 
 rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
 style='darkgrid')
+if platform.system() == 'Linux':
+    rc('font', family='NanumGothic')
 
 
 class MyClass:
