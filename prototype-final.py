@@ -186,7 +186,7 @@ class MyClass:
         top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
     
         # Malgun Gothic 폰트 로드
-        font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
+        font_path = 'C:\Users\User\빅프 API 데이터모음\프로토타입(스트림릿)\malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
         font_prop = fm.FontProperties(fname=font_path)
         plt.rcParams['font.family'] = font_prop.get_name()
         
@@ -205,7 +205,7 @@ class MyClass:
         top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
         
         # Malgun Gothic 폰트 로드
-        font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
+        font_path = 'C:\Users\User\빅프 API 데이터모음\프로토타입(스트림릿)\malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
         font_prop = fm.FontProperties(fname=font_path)
         plt.rcParams['font.family'] = font_prop.get_name()
         
