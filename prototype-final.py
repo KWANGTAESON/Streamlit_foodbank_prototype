@@ -18,11 +18,6 @@ import joblib
 import platform
 import matplotlib.font_manager as fm
 
-# 시각화 한글폰트 설정
-plt.rc('font', family='Malgun Gothic')
-sns.set(font="Malgun Gothic", 
-rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
-style='darkgrid')
 
 class MyClass:
     def __init__(self):
@@ -188,7 +183,12 @@ class MyClass:
         # Malgun Gothic 폰트 로드
         font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
         font_prop = fm.FontProperties(fname=font_path)
-    
+        # 시각화 한글폰트 설정
+        plt.rc('font', family='Malgun Gothic')
+        sns.set(font=font_prop, 
+        rc={"axes.unicode_minus":False}, # 마이너스 부호 깨짐 현상 해결
+        style='darkgrid')
+
         fig = plt.figure()
         fig.set_dpi(300)  # DPI 값을 조정하여 레티나 품질로 설정
         sns.barplot(data=top20, x='기부건수', y='기부자명')
