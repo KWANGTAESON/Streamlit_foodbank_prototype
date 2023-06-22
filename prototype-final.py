@@ -183,7 +183,7 @@ class MyClass:
         return folium_static(map)
 import matplotlib.font_manager as fm
 
-def grouping_gugun_graph20(gu):
+def grouping_gugun_graph20(self, gu):
     top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
 
     # Malgun Gothic 폰트 로드
@@ -201,7 +201,7 @@ def grouping_gugun_graph20(gu):
     return st.pyplot(fig)
 
 
-def grouping_gugun_money_graph20(gu):
+def grouping_gugun_money_graph20(self, gu):
     top20 = group_gugun_data2[group_gugun_data2['통합시군구코드'] == gu].sort_values('기부금액', ascending=False).head(20)
 
     # Malgun Gothic 폰트 로드
