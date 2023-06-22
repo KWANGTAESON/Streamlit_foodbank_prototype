@@ -181,13 +181,12 @@ class MyClass:
 
         # 출력 화면에 맵 열기
         return folium_static(map)
-import matplotlib.font_manager as fm
 
-def grouping_gugun_graph20(self, gu):
+    def grouping_gugun_graph20(self, gu):
     top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
 
     # Malgun Gothic 폰트 로드
-    font_path = 'MalgunGothic.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
+    font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
     font_prop = fm.FontProperties(fname=font_path)
 
     fig = plt.figure()
@@ -217,10 +216,9 @@ def grouping_gugun_money_graph20(self, gu):
     plt.tight_layout()
 
     return st.pyplot(fig)
+
     # # 구 별 최다 기부처 그래프 Top20 함수 7
     # def grouping_gugun_graph20(self, gu):
-    font_path = 'malgun.ttf'  # Malgun Gothic 폰트 파일의 경로로 변경
-    font_prop = fm.FontProperties(fname=font_path)
 
     #     top20 = group_gugun_data1[group_gugun_data1['통합시군구코드'] == gu].sort_values('기부건수', ascending=False).head(20)
     #     fig = plt.figure()
