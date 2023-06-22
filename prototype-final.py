@@ -215,7 +215,7 @@ class MyClass:
         plt.ylabel('기부자명', fontproperties=font_prop)
         plt.tight_layout()
 
-    return st.pyplot(fig)
+        return st.pyplot(fig)
 
     # # 구 별 최다 기부처 그래프 Top20 함수 7
     # def grouping_gugun_graph20(self, gu):
