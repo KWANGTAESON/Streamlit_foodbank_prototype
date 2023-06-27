@@ -244,6 +244,7 @@ with tab1:
         today_object = today.strftime('%Y-%m-%d')
         count = user_data['날짜'].str.replace('.', '-')
         cnt = 0
+        num_index=[]
         for i in count:
             if i == today_object:
                 num_index = user_data[user_data['날짜'] == i.replace('-','.')].index.to_list()
