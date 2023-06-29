@@ -214,6 +214,26 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown(
+    """
+    <style>
+@font-face {
+font-family: 'GmarketSansMedium';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+html, body, [class*="css"]  {
+font-family: 'GmarketSansMedium';
+font-size: 12;
+}
+</style>
+
+""",
+    unsafe_allow_html=True,
+)
+
 @st.cache_data
 def read_data():
     proto = MyClass()
